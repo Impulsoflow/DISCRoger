@@ -25,7 +25,7 @@
             text-align: center;
             cursor: pointer;
             background-color: #f8fafc;
-            font-weight: bold; /* Reforçado o negrito aqui */
+            font-weight: bold;
         }
         .scale-option:hover {
             background-color: #e0f2fe;
@@ -62,7 +62,6 @@
         .input-icon input { padding-left: 42px; }
         .progress-bar { height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin-top: 12px; }
         .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #0ea5e9); transition: width 0.3s ease; }
-        #scores canvas { max-width: 600px !important; height: 300px !important; margin: 0 auto; }
         .status-success { color: #10b981; font-weight: bold; }
         .status-error { color: #ef4444; font-weight: bold; }
         .status-pending { color: #f59e0b; font-weight: bold; }
@@ -151,8 +150,11 @@
             <p class="text-center text-gray-700 text-sm">Explore como suas características se distribuem nas quatro dimensões do DISC e descubra seus pontos fortes e áreas de melhoria.</p>
         </div>
 
-        <div id="scores" class="bg-gray-50 rounded-lg p-4 mb-6 shadow-inner">
-            <canvas id="resultChart"></canvas>
+        <!-- GRÁFICO CENTRALIZADO RESPONSIVO -->
+        <div id="scores" class="bg-gray-50 rounded-lg p-2 md:p-4 mb-6 shadow-inner w-full flex justify-center items-center overflow-x-hidden">
+            <div class="relative w-full max-w-[600px] h-[300px]">
+                <canvas id="resultChart"></canvas>
+            </div>
         </div>
 
         <div id="dominant-section" class="mt-4 space-y-4"></div>
@@ -319,7 +321,20 @@ const fullProfiles = {
     }
 };
 
-function getCombinationExplanation(primary, secondary) {
+function getCombinationExplanation(primary, secondary, pctData) {
+    // LÓGICA DO PERFIL CAMALEÃO / EQUILIBRADO
+    if (pctData) {
+        const maxPct = Math.max(pctData.D, pctData.I, pctData.S, pctData.C);
+        const minPct = Math.min(pctData.D, pctData.I, pctData.S, pctData.C);
+        
+        // Se a diferença entre o traço mais alto e o mais baixo for de até 12% 
+        // (ex: D: 28%, I: 25%, S: 24%, C: 23%), o perfil é considerado equilibrado.
+        if (maxPct - minPct <= 12) {
+            return "Sua pontuação revela um **Perfil Integrador / Flexível (Camaleão)**. Você possui uma distribuição notavelmente equilibrada entre os quatro quadrantes do DISC.\n\n💡 VISÃO GERAL:\nVocê é um líder altamente adaptável, capaz de ler o ambiente e ajustar seu comportamento de acordo com a necessidade. Diferente de perfis com um pico extremo, você não fica preso a um único estilo de agir. Você consegue ser firme (D), comunicativo (I), acolhedor (S) e criterioso (C) em medidas quase iguais, o que o torna um profissional incrivelmente valioso em tempos de mudança.\n\n• Forças e Superpoderes: Inteligência situacional avançada, flexibilidade extrema, moderação de conflitos complexos e a rara habilidade de atuar como o 'elo' perfeito entre membros da equipe que possuem perfis totalmente opostos.\n• Estilo de Liderança: Liderança Situacional e Transformacional. Você não impõe um único formato de gestão; em vez disso, você avalia o cenário e molda o seu estilo para entregar exatamente aquilo que a equipe ou o projeto mais precisa naquele momento específico.\n• Pontos de Atenção: A altíssima adaptabilidade pode ter um custo. Primeiramente, a equipe pode não ter clareza de qual é a sua 'verdadeira' postura (falta de previsibilidade). Além disso, o esforço mental de se moldar constantemente aos diferentes ambientes consome muita energia e pode gerar uma profunda fadiga emocional (Burnout de adaptação).\n• Dica de Desenvolvimento: Abrace a sua versatilidade como um superpoder, mas estabeleça valores e limites inegociáveis. Pratique a intencionalidade: decida de forma consciente qual 'chapéu' usar, em vez de apenas reagir ao ambiente de forma automática. Lembre-se de que, às vezes, a sua equipe precisa que você imponha uma cultura forte, e não apenas que você se adapte pacificamente a ela.";
+        }
+    }
+
+    // LÓGICA PADRÃO DE COMBINAÇÃO DE DUAS LETRAS
     const combos = {
         DI: "Sua combinação Dominância-Influência (DI) cria o perfil do 'Pioneiro Impulsionador'. Você é a força motriz que faz as coisas acontecerem, unindo persuasão magnética com uma competitividade natural e focada.\n\n💡 VISÃO GERAL:\nVocê possui a rara habilidade de focar incansavelmente em resultados enquanto contagia e engaja todos ao seu redor. É um visionário que enxerga além do óbvio e não teme assumir as rédeas para guiar equipes rumo a metas ambiciosas. Onde outros veem barreiras, você enxerga o palco perfeito para o sucesso e o crescimento.\n\n• Forças e Superpoderes: Agilidade ímpar na tomada de decisão, coragem para assumir riscos calculados, comunicação persuasiva e um otimismo inabalável. Você transforma ideias ousadas em realidade tangível.\n• Estilo de Liderança: Inspirador e incisivo. Você mobiliza pessoas não apenas pela autoridade, mas pela energia e carisma. Excelente para alavancar negócios e quebrar paradigmas em mercados competitivos.\n• Pontos de Atenção: A impaciência com processos burocráticos e a aversão à rotina podem fazer com que detalhes vitais passem despercebidos. Cuidado para não atropelar o ritmo dos mais analíticos.\n• Dica de Desenvolvimento: Pratique a escuta ativa e invista em um planejamento mais estruturado. Delegue processos operacionais para perfis mais metódicos. Ir rápido garante o arranque, mas ir alinhado com a equipe garante que a vitória seja duradoura e sustentável.",
         
@@ -544,7 +559,7 @@ async function generatePdfDocAndFileName() {
     doc.setFillColor(107, 33, 168); doc.rect(0, 0, 210, 25, "F");
     doc.setFontSize(18); doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255);
     doc.text("Sua Combinação Predominante", 20, 17);
-    addLabelAndText(doc, "Dinâmica da sua Combinação:", getCombinationExplanation(data.primary, data.secondary), 20, 45, [107, 33, 168]);
+    addLabelAndText(doc, "Dinâmica da sua Combinação:", getCombinationExplanation(data.primary, data.secondary, data.pct), 20, 45, [107, 33, 168]);
     addFooterSignature();
 
     // OUTROS PERFIS (Terciário e Quaternário)
@@ -618,7 +633,6 @@ function loadQuestion(index) {
             <p class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">"${affirmations[index]}"</p>
             <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6">
                 ${[1,2,3,4,5].map(val => `
-                    <!-- ALTERAÇÃO FEITA AQUI: flex-col items-center justify-center p-3 -->
                     <div class="scale-option flex flex-col items-center justify-center p-3 gap-1" data-value="${val}" onclick="selectAnswer(${qNum}, ${val})">
                         <span class="text-xl sm:text-2xl font-bold">${val}</span>
                         <small class="text-xs font-bold text-gray-600 text-center leading-tight">${val === 1 ? 'Discordo Totalmente' : val === 2 ? 'Discordo' : val === 3 ? 'Neutro' : val === 4 ? 'Concordo' : 'Concordo Totalmente'}</small>
@@ -693,7 +707,7 @@ async function showResult() {
 
         <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-4 rounded-lg border-l-4 border-purple-500 mt-4">
             <h3 class="text-lg font-bold text-gray-800">Combinação dos Perfis</h3>
-            <p class="mt-2 text-sm text-gray-700">${getCombinationExplanation(primary, secondary).replace(/\n\n/g, '<br><br>').replace(/•/g, '<br>•')}</p>
+            <p class="mt-2 text-sm text-gray-700">${getCombinationExplanation(primary, secondary, pct).replace(/\n\n/g, '<br><br>').replace(/•/g, '<br>•')}</p>
         </div>
     `;
 
