@@ -169,9 +169,9 @@
 </div>
 
 <script>
-// ========================================
+// 
 // 🖼️ CONFIGURAÇÃO DE IMAGENS BASE64
-// ========================================
+// 
 const base64Images = {
     "colerico_dominante": "", 
     "sanguineo_influente": "", 
@@ -180,9 +180,9 @@ const base64Images = {
     "diagrama_lideranca": ""  
 };
 
-// ========================================
+// 
 // ⚙️ CONFIGURAÇÃO DE API
-// ========================================
+// 
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxgeDVOlXVASotc_T87QHS4ctCudfBaIetzravLJJz-u0z7rrHP833i57K4falAA1nJ/exec";
 const API_KEY = "2026Impulso$";
 
@@ -194,9 +194,9 @@ const rgbColors = {
     C: [0, 153, 77]   // Verde Esmeralda
 };
 
-// ========================================
+// 
 // === GERADOR DE SELOS VIBRANTES ===
-// ========================================
+// 
 function generateProfileBadge(letter, color1, color2) {
     const canvas = document.createElement('canvas');
     canvas.width = 400; canvas.height = 400;
@@ -230,9 +230,9 @@ window.onload = () => {
     finalProfileImages.C = getFinalImage('melancolico_analitico', 'C', '#00CC66', '#006633');
 };
 
-// ========================================
+// 
 // === AFIRMAÇÕES ===
-// ========================================
+// 
 const affirmations = [
     "Enfrento desafios de frente e tomo decisões rápidas.", "Adoro conhecer pessoas novas e criar conexões.", "Prefiro um ambiente calmo e previsível, onde todos se apoiam.", "Reviso tudo com cuidado para garantir que esteja 100% correto.",
     "Sou direto e focado em resultados, mesmo que isso gere conflito.", "Meu entusiasmo é contagiante e motiva os outros a agir.", "Sou paciente e um bom ouvinte, especialmente em momentos difíceis.", "Sigo regras e procedimentos com rigor e consistência.",
@@ -321,7 +321,6 @@ const fullProfiles = {
     }
 };
 
-// Aqui o código se manteve o original, sem a matemática que você pediu para remover
 function getCombinationExplanation(primary, secondary) {
     const combos = {
         DI: "Sua combinação Dominância-Influência (DI) cria o perfil do 'Pioneiro Impulsionador'. Você é a força motriz que faz as coisas acontecerem, unindo persuasão magnética com uma competitividade natural e focada.\n\n💡 VISÃO GERAL:\nVocê possui a rara habilidade de focar incansavelmente em resultados enquanto contagia e engaja todos ao seu redor. É um visionário que enxerga além do óbvio e não teme assumir as rédeas para guiar equipes rumo a metas ambiciosas. Onde outros veem barreiras, você enxerga o palco perfeito para o sucesso e o crescimento.\n\n• Forças e Superpoderes: Agilidade ímpar na tomada de decisão, coragem para assumir riscos calculados, comunicação persuasiva e um otimismo inabalável. Você transforma ideias ousadas em realidade tangível.\n• Estilo de Liderança: Inspirador e incisivo. Você mobiliza pessoas não apenas pela autoridade, mas pela energia e carisma. Excelente para alavancar negócios e quebrar paradigmas em mercados competitivos.\n• Pontos de Atenção: A impaciência com processos burocráticos e a aversão à rotina podem fazer com que detalhes vitais passem despercebidos. Cuidado para não atropelar o ritmo dos mais analíticos.\n• Dica de Desenvolvimento: Pratique a escuta ativa e invista em um planejamento mais estruturado. Delegue processos operacionais para perfis mais metódicos. Ir rápido garante o arranque, mas ir alinhado com a equipe garante que a vitória seja duradoura e sustentável.",
@@ -342,7 +341,7 @@ function getCombinationExplanation(primary, secondary) {
         
         SC: "Sua combinação Estabilidade-Conformidade (SC) revela o perfil do 'Especialista Meticuloso'. Você é a personificação da confiabilidade, garantindo que tudo funcione com precisão, harmonia e segurança incontestável.\n\n💡 VISÃO GERAL:\nVocê é o guardião dos bastidores. Prefere rotinas bem estabelecidas, onde suas habilidades organizacionais e analíticas possam brilhar sem a pressão de mudanças bruscas. Não age por impulso; toda decisão sua é devidamente pensada, analisada e planejada. Isso faz de você um profissional de extrema confiança, para quem líderes e diretores entregam as tarefas mais complexas e sigilosas da empresa.\n\n• Forças e Superpoderes: Precisão cirúrgica, paciência infinita para processos longos, olhar afiado para detectar riscos, organização sistemática e dedicação absoluta à qualidade da entrega.\n• Estilo de Liderança: Técnico e procedural. Lidera através da criação de métodos seguros, oferecendo todo o suporte técnico para que a equipe não cometa erros. Cria um ambiente de ordem e previsibilidade.\n• Pontos de Atenção: A necessidade excessiva de segurança (S) somada ao perfeccionismo (C) pode travar a sua capacidade de inovação e agilidade. Você pode paralisar diante de situações ambíguas ou que exijam improviso.\n• Dica de Desenvolvimento: Entenda que em um mundo dinâmico, o cenário perfeito raramente existirá. Aprenda a trabalhar com dados incompletos e a tomar decisões ágeis. Celebre o processo de tentativa e erro como uma forma válida de aprendizado, permitindo-se ser um pouco menos rígido consigo mesmo.",
         
-        CD: "Sua combinação Conformidade-Dominância (CD) compõe o perfil do 'Arquiteto de Soluções'. Você pensa com a profundidade de um cientista e executa com a determinação de um comandante focado no alvo.\n\n💡 VISÃO GERAL:\nVocê é movido pelo desejo de estar correto e de vencer. Possui uma mente brilhante para estruturar projetos intrincados, aliados à força de vontade para tirá-los do papel. Diferente de líderes mais emocionais, você constrói seu respeito com base na inteligência, no planejamento estratégico implacável e na entrega de soluções à prova de falhas.\n\n• Forças e Superpoderes: Raciocínio lógico afiado, visão estratégica de longo prazo, capacidade de identificar eficiências onde ninguém mais vê e uma autossuficiência que dispensa supervisão alheia.\n• Estilo de Liderança: Exigente, autoritário no conhecimento e focado em excelência. Você estabelece o padrão-ouro e espera que a equipe suba de nível para acompanhá-lo. É o tipo de líder que transforma processos caóticos em engrenagens de sucesso.\n• Pontos de Atenção: Pode ser percebido como frio, distante ou impaciente com quem tem um ritmo de aprendizado mais lento. A intolerância à incompetência pode gerar um ambiente de tensão constante se não for equilibrada com tato.\n• Dica de Desenvolvimento: O seu intelecto é a sua maior arma, mas a gestão de pessoas requer coração. Dedique tempo para entender as motivações emocionais da sua equipe. Aprenda a dar feedbacks que corrijam o problema sem desmotivar a pessoa. Flexibilidade será o seu maior trunfo para engajar talentos.",
+        CD: "Sua combinação Conformidade-Dominância (CD) compõe o perfil do 'Arquiteto de Soluções'. Você pensa com a profundidade de um cientista e executa com a determinação de um comandante focado no alvo.\n\n💡 VISÃO GERAL:\nVocê é movido pelo desejo de estar correto e de vencer. Possui uma mente brilhante para estruturar projetos intrincados, aliados à força de vontade para tirá-los do papel. Diferente de líderes mais emocionais, você constrói seu respeito com base na inteligência, no planejamento estratégico implacável e na entrega de soluções à prova de falhas.\n\n• Forças e Superpoderes: Raciocínio lógico afiado, visão estratégica de longo prazo, capacidade de identify eficiências onde ninguém mais vê e uma autossuficiência que dispensa supervisão alheia.\n• Estilo de Liderança: Exigente, autoritário no conhecimento e focado em excelência. Você estabelece o padrão-ouro e espera que a equipe suba de nível para acompanhá-lo. É o tipo de líder que transforma processos caóticos em engrenagens de sucesso.\n• Pontos de Atenção: Pode ser percebido como frio, distante ou impaciente com quem tem um ritmo de aprendizado mais lento. A intolerância à incompetência pode gerar um ambiente de tensão constante se não for equilibrada com tato.\n• Dica de Desenvolvimento: O seu intelecto é a sua maior arma, mas a gestão de pessoas requer coração. Dedique tempo para entender as motivações emocionais da sua equipe. Aprenda a dar feedbacks que corrijam o problema sem desmotivar a pessoa. Flexibilidade será o seu maior trunfo para engajar talentos.",
         
         CI: "Sua combinação Conformidade-Influência (CI) cria o perfil do 'Analista Persuasivo'. Você baseia suas convicções em dados sólidos, mas sabe como apresentá-los de forma a educar, engajar e fascinar o seu público.\n\n💡 VISÃO GERAL:\nVocê é uma enciclopédia viva com muito charme. Une a paixão pela exatidão e por regras com a capacidade de articular essas regras de modo que todos compreendam e aceitem. É um professor nato, um conselheiro técnico e um excelente estrategista de comunicação, que detesta o achismo e preza pelo 'saber fazer' acompanhado do 'saber explicar'.\n\n• Forças e Superpoderes: Habilidade de simplificar o complexo, alto padrão de qualidade acadêmica, talento excepcional para apresentações profissionais e capacidade de convencer com base na lógica elegante.\n• Estilo de Liderança: Educador e influenciador técnico. Você lidera fornecendo informações, dados e cenários, guiando a equipe para que eles mesmos cheguem à conclusão lógica que você já havia planejado.\n• Pontos de Atenção: A obsessão por estar sempre certo pode soar como arrogância intelectual. O excesso de detalhes e explicações longas pode cansar interlocutores mais práticos e acelerados.\n• Dica de Desenvolvimento: Adapte a sua comunicação ao seu ouvinte. Treine a sua capacidade de dar respostas em tópicos rápidos e diretos. Além disso, aceite que, em algumas discussões de negócios, as emoções humanas terão mais peso do que a lógica mais perfeita. Seja flexível.",
         
@@ -351,9 +350,9 @@ function getCombinationExplanation(primary, secondary) {
     return combos[primary + secondary] || "Combinação única que equilibra forças analíticas, executoras e relacionais em um padrão exclusivo.";
 }
 
-// ========================================
+// 
 // === GERADOR DE PDF PROFISSIONAL ===
-// ========================================
+// 
 async function renderChart(pct) {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -362,6 +361,9 @@ async function renderChart(pct) {
             const ctx = canvas.getContext("2d");
             Chart.register(ChartDataLabels);
             if (resultChart) { try { resultChart.destroy(); } catch (e) {} }
+
+            // GARANTE ALTA RESOLUÇÃO PARA O PDF (NO PC E NO CELULAR)
+            Chart.defaults.devicePixelRatio = 3;
 
             resultChart = new Chart(ctx, {
                 type: 'bar',
@@ -381,18 +383,18 @@ async function renderChart(pct) {
                         legend: { display: false },
                         datalabels: { anchor: 'end', align: 'right', formatter: (v) => `${v}%`, color: '#1e40af', font: { weight: 'bold', size: 15 }, offset: 10 }
                     },
-                    layout: { padding: { top: 10, right: 40, bottom: 10, left: 10 } }
+                    layout: { padding: { top: 10, right: 40, bottom: 10, left: 10 } },
+                    animation: false // Desativa animação para captura perfeita instantânea
                 }
             });
             resolve();
-        }, 120);
+        }, 300); // Mais tempo para o celular desenhar com calma antes do print
     });
 }
 
 async function generatePdfDocAndFileName() {
     const data = window.userData;
     if (!data) throw new Error("Sem dados para gerar PDF (userData vazio).");
-
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ format: "a4" });
 
@@ -459,15 +461,14 @@ async function generatePdfDocAndFileName() {
         return y + 4;
     }
 
-    // ========================================
+    // 
     // PÁGINA 1 - CABEÇALHO PADRÃO COM FAIXA AZUL
-    // ========================================
+    // 
     doc.setFillColor(248, 250, 252); doc.rect(0, 0, 210, 297, "F"); 
     
     // Faixa Superior
     doc.setFillColor(14, 165, 233);
     doc.rect(0, 0, 210, 25, "F");
-
     doc.setFont("helvetica", "bold"); 
     doc.setFontSize(22); 
     doc.setTextColor(255, 255, 255); 
@@ -492,7 +493,19 @@ async function generatePdfDocAndFileName() {
     let yPdf = 58;
     const chartCanvas = document.getElementById("resultChart");
     if (chartCanvas) {
-        doc.addImage(chartCanvas.toDataURL("image/png", 1.0), "PNG", 20, yPdf, 170, 85); yPdf += 95;
+        const imgData = chartCanvas.toDataURL("image/png", 1.0);
+        
+        // CORREÇÃO DA PROPORÇÃO DO GRÁFICO PARA SMARTPHONES
+        // Ao invés de forçar altura "85", o código lê a proporção real gerada na tela
+        const canvasWidth = chartCanvas.width;
+        const canvasHeight = chartCanvas.height;
+        const ratio = canvasHeight / canvasWidth;
+        
+        const pdfWidth = 170; // Largura no PDF
+        const pdfHeight = pdfWidth * ratio; // Altura no PDF matematicamente proporcional
+
+        doc.addImage(imgData, "PNG", 20, yPdf, pdfWidth, pdfHeight); 
+        yPdf += pdfHeight + 10;
     }
 
     doc.setFontSize(14); doc.setFont("helvetica", "bold"); doc.setTextColor(14, 165, 233);
@@ -558,7 +571,6 @@ async function generatePdfDocAndFileName() {
         doc.setFillColor(31, 41, 55); doc.rect(0, 0, 210, 25, "F");
         doc.setFontSize(18); doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255);
         doc.text("Acesso aos Quatro Quadrantes", 20, 17);
-
         let yOther = 40;
         doc.setFontSize(11); doc.setFont("helvetica", "italic"); doc.setTextColor(100, 100, 100);
         const splitIntroOther = doc.splitTextToSize("Como o seu perfil é perfeitamente equilibrado, você acessa as características de todos os estilos abaixo em intensidades iguais:", 170);
@@ -575,9 +587,7 @@ async function generatePdfDocAndFileName() {
             yOther = addLabelAndText(doc, "Resumo:", px.desc.substring(0, 200) + "...", 20, yOther, cx);
             yOther += 5;
         });
-
         addFooterSignature();
-
     } else {
         // Fluxo Normal (Se não for 25% exato)
         renderProfilePage(data.primary, true);
@@ -594,7 +604,7 @@ async function generatePdfDocAndFileName() {
         doc.setFillColor(31, 41, 55); doc.rect(0, 0, 210, 25, "F");
         doc.setFontSize(18); doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255);
         doc.text("Perfis Terciário e Quartenário", 20, 17);
-
+        
         let yOther = 40;
         doc.setFontSize(11); doc.setFont("helvetica", "italic"); doc.setTextColor(100, 100, 100);
         const splitIntroOther = doc.splitTextToSize("Abaixo apresentamos as características dos outros dois perfis que pontuaram menos no seu teste.", 170);
@@ -619,16 +629,15 @@ async function generatePdfDocAndFileName() {
         yOther += 10;
         yOther = addLabelAndText(doc, "Descrição Geral:", p4.desc, 20, yOther, c4);
         yOther = addLabelAndText(doc, "Qualidades e Liderança:", p4.qualities, 20, yOther, c4);
-
         addFooterSignature();
     }
 
     return { doc, pdfFileName: `💡DISC: ${sanitize(data.name).replace(/\s+/g, "_")}.pdf` };
 }
 
-// ========================================
+// 
 // === FLUXO ===
-// ========================================
+// 
 function startTest() {
     const name = document.getElementById('name').value.trim();
     const whatsapp = document.getElementById('whatsapp').value.trim();
@@ -778,7 +787,6 @@ async function showResult() {
         const chartCanvas = document.getElementById("resultChart");
         let chartImgData = chartCanvas ? chartCanvas.toDataURL("image/png", 1.0) : "";
 
-        // Se for equilibrado, mandamos para a planilha/email com um nome diferente para não confundir você
         await postResultToScript({
             apiKey: API_KEY, testId: "disc_v1", nome: window.userData.name, whatsapp: window.userData.whatsapp,
             email: window.userData.email, 
