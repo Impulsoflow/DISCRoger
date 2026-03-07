@@ -350,7 +350,7 @@ function getCombinationExplanation(primary, secondary) {
     };
     return combos[primary + secondary] || "Combinação única que equilibra forças analíticas, executoras e relacionais em um padrão exclusivo.";
 }
-
+    
 // ========================================
 // === GERADOR DE PDF PROFISSIONAL ===
 // ========================================
@@ -362,9 +362,6 @@ async function renderChart(pct) {
             const ctx = canvas.getContext("2d");
             Chart.register(ChartDataLabels);
             if (resultChart) { try { resultChart.destroy(); } catch (e) {} }
-
-            // Configuração para garantir alta resolução no Chart.js
-            Chart.defaults.devicePixelRatio = 2;
 
             resultChart = new Chart(ctx, {
                 type: 'bar',
@@ -378,55 +375,90 @@ async function renderChart(pct) {
                     }]
                 },
                 options: {
-                    indexAxis: 'y', 
-                    responsive: true, 
-                    maintainAspectRatio: false, // Mantido false, mas o tamanho no PDF será controlado
-                    scales: { 
-                        x: { beginAtZero: true, max: 100 }, 
-                        y: { ticks: { font: { family: 'Inter', weight: 'bold' } }, grid: { display: false } } 
-                    },
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    scales: { x: { beginAtZero: true, max: 100 }, y: { ticks: { font: { family: 'Inter', weight: 'bold' } }, grid: { display: false } } },
                     plugins: {
                         legend: { display: false },
                         datalabels: { anchor: 'end', align: 'right', formatter: (v) => `${v}%`, color: '#1e40af', font: { weight: 'bold', size: 15 }, offset: 10 }
                     },
-                    layout: { padding: { top: 10, right: 40, bottom: 10, left: 10 } },
-                    animation: false // Desativa a animação para garantir captura imediata e perfeita
+                    layout: { padding: { top: 10, right: 40, bottom: 10, left: 10 } }
                 }
             });
             resolve();
-        }, 300); // Aumentei um pouco o tempo para garantir a renderização completa antes de capturar
+        }, 120);
     });
 }
 
-// Dentro da função generatePdfDocAndFileName(), altere a parte que adiciona o gráfico:
+async function generatePdfDocAndFileName() {
+    const data = window.userData;
+    if (!data) throw new Error("Sem dados para gerar PDF (userData vazio).");
 
-    let yPdf = 58;
-    const chartCanvas = document.getElementById("resultChart");
-    if (chartCanvas) {
-        // Pega a imagem do canvas original
-        const imgData = chartCanvas.toDataURL("image/png", 1.0);
-        
-        // Define as proporções desejadas no PDF (A4 largura = 210mm)
-        // Margem de 20mm de cada lado = 170mm de largura disponível
-        const pdfWidth = 170;
-        
-        // Para evitar que o gráfico fique esticado, calculamos a altura 
-        // baseada na proporção original do canvas (Width / Height)
-        const canvasWidth = chartCanvas.width;
-        const canvasHeight = chartCanvas.height;
-        const ratio = canvasHeight / canvasWidth;
-        
-        // Calcula a altura ideal no PDF para manter a proporção
-        const pdfHeight = pdfWidth * ratio;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ format: "a4" });
 
-        // Adiciona a imagem com as dimensões proporcionais
-        doc.addImage(imgData, "PNG", 20, yPdf, pdfWidth, pdfHeight); 
-        
-        // Atualiza a posição Y somando a altura do gráfico + um espaçamento
-        yPdf += pdfHeight + 10;
+    const addFooterSignature = () => {
+        doc.setFontSize(10); doc.setFont("helvetica", "italic"); doc.setTextColor(120, 120, 120);
+        doc.text("Rogério Braga - impulsoflow@gmail.com", 105, 290, { align: "center" });
+    };
+
+    function checkPageBreak(doc, currentY) {
+        if (currentY > 270) {
+            doc.addPage();
+            doc.setFillColor(248, 250, 252);
+            doc.rect(0, 0, 210, 297, "F");
+            addFooterSignature();
+            return 20; 
+        }
+        return currentY;
     }
 
-
+    function addLabelAndText(doc, label, text, x, y, colorLabel) {
+        y = checkPageBreak(doc, y);
+        doc.setFont("helvetica", "bold"); doc.setTextColor(colorLabel[0], colorLabel[1], colorLabel[2]);
+        doc.setFontSize(11); doc.text(label, x, y);
+        y += 6;
+        
+        const paragraphs = text.split('\n');
+        for (let p of paragraphs) {
+            p = p.trim(); if (!p) continue;
+            y = checkPageBreak(doc, y);
+            
+            if (p.startsWith("💡")) {
+                doc.setFont("helvetica", "bold"); doc.setTextColor(colorLabel[0], colorLabel[1], colorLabel[2]);
+                doc.setFontSize(11); doc.text(p, x, y);
+                y += 6; continue;
+            }
+            
+            if (p.startsWith("•")) {
+                doc.setFont("helvetica", "bold"); doc.setTextColor(40, 40, 40); doc.setFontSize(10);
+                const colonIdx = p.indexOf(":");
+                if (colonIdx !== -1) {
+                    const titlePart = p.substring(0, colonIdx + 1);
+                    const descPart = p.substring(colonIdx + 1);
+                    
+                    doc.text(titlePart, x, y);
+                    const titleWidth = doc.getTextWidth(titlePart) + 1;
+                    
+                    doc.setFont("helvetica", "normal"); doc.setTextColor(70, 70, 70);
+                    const splitDesc = doc.splitTextToSize(descPart, 170 - titleWidth);
+                    doc.text(splitDesc, x + titleWidth, y);
+                    y += (splitDesc.length * 4.5) + 2;
+                } else {
+                    doc.setFont("helvetica", "normal"); doc.setTextColor(70, 70, 70);
+                    const splitP = doc.splitTextToSize(p, 170); doc.text(splitP, x, y);
+                    y += (splitP.length * 4.5) + 2;
+                }
+                continue;
+            }
+            
+            doc.setFont("helvetica", "normal"); doc.setTextColor(70, 70, 70); doc.setFontSize(10);
+            const splitText = doc.splitTextToSize(p, 170);
+            doc.text(splitText, x, y);
+            y += (splitText.length * 4.5) + 2;
+        }
+        return y + 4;
+    }
+    
     // ========================================
     // PÁGINA 1 - CABEÇALHO PADRÃO COM FAIXA AZUL
     // ========================================
