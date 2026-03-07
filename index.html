@@ -390,7 +390,7 @@ async function renderChart(pct) {
         }, 300);
     });
 }
-
+    
 async function generatePdfDocAndFileName() {
     const data = window.userData;
     if (!data) throw new Error("Sem dados para gerar PDF (userData vazio).");
@@ -494,29 +494,38 @@ async function generatePdfDocAndFileName() {
     if (chartCanvas) {
         const imgData = chartCanvas.toDataURL("image/png", 1.0);
         
-        // A SOLUÇÃO CORRETA: Fixar largura E altura usando limites máximos.
-        // O A4 tem largura 210. Com margens de 20 de cada lado, largura max = 170.
-        // Não deixamos a altura passar de 85mm para não empurrar o texto muito para baixo.
-        
+        // --- INÍCIO DA CORREÇÃO PARA SMARTPHONES ---
+        // Lógica de cálculo proporcional para garantir tamanho e qualidade ideais no PDF
+        const maxPdfWidth = 170; // Largura máxima desejada no PDF (A4 = 210, margem de 20 de cada lado)
+        const maxPdfHeight = 85; // Altura máxima desejada para não "espremer" o texto abaixo
+
+        // Pega as dimensões reais do canvas renderizado na tela (pode variar entre PC e celular)
         const canvasWidth = chartCanvas.width;
         const canvasHeight = chartCanvas.height;
-        const ratio = canvasHeight / canvasWidth;
         
-        let pdfWidth = 170;
-        let pdfHeight = pdfWidth * ratio;
+        // Calcula a proporção real da imagem
+        const imgRatio = canvasHeight / canvasWidth;
+        
+        let pdfWidth = maxPdfWidth;
+        let pdfHeight = pdfWidth * imgRatio;
 
-        // Se no celular ele ficar alto demais (proporção quadrada), nós forçamos 
-        // a redução da altura e centralizamos.
-        if (pdfHeight > 85) {
-            pdfHeight = 85;
-            pdfWidth = pdfHeight / ratio; // Recalcula a largura para manter a proporção
+        // Se a altura proporcional ficar maior que a nossa altura máxima, 
+        // ajustamos a imagem pela altura e recalculamos a largura para manter a proporção
+        if (pdfHeight > maxPdfHeight) {
+            pdfHeight = maxPdfHeight;
+            pdfWidth = pdfHeight / imgRatio;
         }
 
-        // Centraliza o gráfico no PDF (A4 = 210mm)
+        // Centraliza a imagem horizontalmente na página A4 (210mm)
         const xOffset = (210 - pdfWidth) / 2;
 
         doc.addImage(imgData, "PNG", xOffset, yPdf, pdfWidth, pdfHeight); 
-        yPdf += 95; // Mantém o espaçamento constante para o texto que vem abaixo
+        
+        // Independentemente do tamanho gerado (se for celular será menor em altura do que no PC),
+        // fixamos o início do próximo texto logo abaixo do espaço máximo reservado para o gráfico
+        // Assim, o texto "Importância da Análise DISC..." começa sempre no mesmo lugar.
+        yPdf += maxPdfHeight + 10; 
+        // --- FIM DA CORREÇÃO ---
     }
 
     doc.setFontSize(14); doc.setFont("helvetica", "bold"); doc.setTextColor(14, 165, 233);
@@ -642,7 +651,6 @@ async function generatePdfDocAndFileName() {
 
     return { doc, pdfFileName: `💡DISC: ${sanitize(data.name).replace(/\s+/g, "_")}.pdf` };
 }
-
 // 
 // === FLUXO ===
 // 
