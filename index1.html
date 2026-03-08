@@ -291,7 +291,7 @@ const fullProfiles = {
         name: "Dominância (Colérico)",
         desc: "Indivíduos com perfil Dominante são movidos por desafios, resultados e controle. São líderes naturais que tomam decisões rápidas, enfrentam obstáculos com coragem e preferem ambientes onde podem agir com autonomia. Têm foco intenso em metas e não se intimidam diante de conflitos ou pressão. No ambiente profissional, destacam-se em papéis que exigem iniciativa, coragem e capacidade de resolver problemas complexos sob estresse.",
         qualities: "Coragem para tomar decisões difíceis, iniciativa para agir sem esperar instruções, foco implacável em resultados, assertividade na comunicação, liderança por exemplo, resiliência sob pressão, capacidade de assumir riscos calculados, energia para impulsionar mudanças, objetividade ao cortar caminho, persistência diante de obstáculos.\n\n💡 LIDERANÇA E AMBIENTE:\n• Estilo de Liderança: Liderança por Comando. Líderes dominantes, ousados, firmes, inflexíveis, acelerados e enérgicos.\n• Tomada de Decisão: Racional, intuitiva e rápida.\n• Ambiente Ideal: Ambientes funcionais e de alta pressão.",
-        weaknesses: "Impaciência com processos lentos ou burocráticos, tendência a ser autoritário ou insensível às emoções alheias, dificuldade em delegar tarefas por medo de perda de controle, negligência de detalhes em prol da velocidade, reação defensiva a críticas, dificuldade em ouvir opiniões contrárias, tendência a criar conflitos desnecessários por impulso, frustração com indecisão alheia, foco excessivo em metas a ponto de ignorar relações interpessoais, resistência a feedbacks que questionem sua autoridade.",
+        weaknesses: "Impaciência com processes lentos ou burocráticos, tendência a ser autoritário ou insensível às emoções alheias, dificuldade em delegar tarefas por medo de perda de controle, negligência de detalhes em prol da velocidade, reação defensiva a críticas, dificuldade em ouvir opiniões contrárias, tendência a criar conflitos desnecessários por impulso, frustração com indecisão alheia, foco excessivo em metas a ponto de ignorar relações interpessoais, resistência a feedbacks que questionem sua autoridade.",
         development: "Pratique escuta ativa: pare, olhe nos olhos e ouça sem interromper. Desenvolva empatia: pergunte como os outros se sentem antes de agir. Aprenda a delegar com confiança: defina claramente o resultado esperado, mas permita liberdade no caminho. Respire antes de reagir sob pressão. Busque feedback regularmente, especialmente de pessoas que pensam diferente. Lembre-se: resultados sustentáveis nascem de equipes engajadas, não apenas de decisões rápidas.",
         jobs: ["Empreendedor / Fundador de Startups", "CEO / Diretor Executivo", "Advogado de Litígios", "Corretor de Imóveis de Alto Padrão", "Trader / Investidor", "Policial / Agente de Segurança", "Engenheiro de Projetos (com liderança)", "Gerente de Vendas", "Militar de Alta Patente", "Produtor de Eventos de Alto Impacto", "Chef Executivo", "Diretor de Operações", "Engenheiro de Minas", "Corretor de Seguros Corporativos", "Gerente de Crise", "Inspetor de Qualidade Industrial", "Comandante de Navio", "Líder de Equipe de Resgate", "Consultor Estratégico", "Diretor de Recursos Humanos"]
     },
@@ -323,33 +323,217 @@ const fullProfiles = {
 
 function getCombinationExplanation(primary, secondary) {
     const combos = {
-        DI: "Sua combinação Dominância-Influência (DI) cria o perfil do 'Pioneiro Impulsionador'. Você é a força motriz que faz as coisas acontecerem, unindo persuasão magnética com uma competitividade natural e focada.\n\n💡 VISÃO GERAL:\nVocê possui a rara habilidade de focar incansavelmente em resultados enquanto contagia e engaja todos ao seu redor. É um visionário que enxerga além do óbvio e não teme assumir as rédeas para guiar equipes rumo a metas ambiciosas. Onde outros veem barreiras, você enxerga o palco perfeito para o sucesso e o crescimento.\n\n• Forças e Superpoderes: Agilidade ímpar na tomada de decisão, coragem para assumir riscos calculados, comunicação persuasiva e um otimismo inabalável. Você transforma ideias ousadas em realidade tangível.\n• Estilo de Liderança: Inspirador e incisivo. Você mobiliza pessoas não apenas pela autoridade, mas pela energia e carisma. Excelente para alavancar negócios e quebrar paradigmas em mercados competitivos.\n• Pontos de Atenção: A impaciência com processos burocráticos e a aversão à rotina podem fazer com que detalhes vitais passem despercebidos. Cuidado para não atropelar o ritmo dos mais analíticos.\n• Dica de Desenvolvimento: Pratique a escuta ativa e invista em um planejamento mais estruturado. Delegue processos operacionais para perfis mais metódicos. Ir rápido garante o arranque, mas ir alinhado com a equipe garante que a vitória seja duradoura e sustentável.",
-        
-        DS: "Sua combinação Dominância-Estabilidade (DS) forma o perfil do 'Realizador Confiável'. Você une a força propulsora para alcançar metas com a paciência necessária para construir fundações sólidas e duradouras.\n\n💡 VISÃO GERAL:\nVocê é um líder pragmático que não acredita em atalhos perigosos. Sua determinação por resultados é balanceada pelo desejo de segurança e coesão da equipe. Essa é uma das combinações mais poderosas para gestão de crises, pois você mantém o foco no objetivo sem perder a calma e sem sacrificar as pessoas ao longo do caminho.\n\n• Forças e Superpoderes: Foco consistente, lealdade profunda, resiliência invejável e capacidade de executar planos de longo prazo com excelência. Você é a âncora que resolve problemas difíceis com pragmatismo.\n• Estilo de Liderança: Diretivo, porém protetor. Você não exige da equipe aquilo que não está disposto a fazer. Cria ambientes onde a produtividade e a segurança psicológica caminham lado a lado.\n• Pontos de Atenção: O conflito interno entre querer mudanças rápidas (D) e temer a instabilidade (S) pode gerar teimosia. Pode haver dificuldade em delegar, preferindo sobrecarregar-se para garantir que o trabalho seja feito à sua maneira.\n• Dica de Desenvolvimento: Aprenda a abraçar a inovação de forma gradual. Nem toda mudança ameaça a segurança do projeto. Confie mais no potencial adaptativo da sua equipe e permita-se recalcular a rota sem sentir que perdeu o controle da situação.",
-        
-        DC: "Sua combinação Dominância-Conformidade (DC) consolida o perfil do 'Estrategista Implacável'. Você une uma determinação implacável por resultados com um rigor analítico que não deixa margem para falhas.\n\n💡 VISÃO GERAL:\nVocê é movido pela lógica, pela eficiência e pela vitória. Não toma decisões baseadas em intuição cega, mas sim em dados concretos e na busca pela perfeição. Seu nível de exigência (consigo mesmo e com os outros) é altíssimo, o que faz de você um profissional indispensável em ambientes que demandam precisão absoluta e resultados de alto impacto.\n\n• Forças e Superpoderes: Pensamento crítico aguçado, capacidade de resolver problemas complexos, foco cirúrgico na qualidade e determinação inabalável para bater metas. Você corta distrações e vai direto ao ponto.\n• Estilo de Liderança: Analítico, exigente e focado em fatos. Você lidera pela competência técnica e pelo estabelecimento de padrões de classe mundial. É respeitado pela sua inteligência e capacidade estratégica.\n• Pontos de Atenção: O excesso de franqueza e a falta de tato diplomático podem intimidar as pessoas ao redor. O perfeccionismo somado à urgência pode criar um ambiente de pressão exaustivo para a equipe.\n• Dica de Desenvolvimento: Exercite a empatia e lembre-se de que nem todos processam informações na mesma velocidade que você. Elogie os pequenos progressos de sua equipe, pois o reforço positivo muitas vezes gera mais resultado do que a crítica construtiva constante.",
-        
-        ID: "Sua combinação Influência-Dominância (ID) revela um perfil de 'Liderança Magnética e Executora'. Você é um visionário nato, capaz de cativar multidões e direcioná-las com firmeza para a ação.\n\n💡 VISÃO GERAL:\nO mundo é o seu palco. Você possui uma energia vibrante que atrai as pessoas, e utiliza esse magnetismo para impulsionar projetos e quebrar barreiras. Diferente do perfil DI, a sua primeira inclinação é encantar e persuadir, usando a conexão humana como a principal ferramenta para, em seguida, impor seu ritmo audacioso e focado no resultado final.\n\n• Forças e Superpoderes: Carisma inigualável, networking poderoso, coragem para assumir posições de destaque e a capacidade de vender qualquer ideia. Você motiva times e extrai o melhor deles em tempo recorde.\n• Estilo de Liderança: Motivacional e dinâmico. Você lidera contagiando as pessoas com a sua visão de futuro. É o mestre em construir alianças estratégicas e usar sua rede de contatos para acelerar negócios.\n• Pontos de Atenção: A tendência a ser muito otimista pode levá-lo a subestimar riscos operacionais ou a prometer prazos irreais. Pode apresentar dificuldade em concluir projetos longos quando a empolgação inicial acaba.\n• Dica de Desenvolvimento: Ancore suas ideias visionárias na realidade dos fatos. Cerque-se de pessoas analíticas e organizadas que possam dar sustentação às suas iniciativas. A disciplina será a ponte que conectará o seu brilhantismo natural aos resultados concretos.",
-        
-        IS: "Sua combination Influência-Estabilidade (IS) cria um perfil profundamente focado no 'Acolhimento e Engajamento'. Você é o verdadeiro coração de qualquer equipe, unindo comunicação empática com lealdade inabalável.\n\n💡 VISÃO GERAL:\nAs pessoas confiam em você instintivamente. Você possui o dom de fazer com que todos se sintam ouvidos, valorizados e importantes. Sua abordagem é humana, amigável e sempre busca o consenso. Mais do que atingir metas frias, o seu propósito de vida e trabalho está em construir relacionamentos duradouros e em cultivar um ambiente onde a harmonia e a alegria prevaleçam.\n\n• Forças e Superpoderes: Empatia genuína, excelente escuta ativa, capacidade de mediar conflitos com leveza e a habilidade de formar equipes incrivelmente unidas. Você é o 'cimento' emocional das organizações.\n• Estilo de Liderança: Colaborativo, acessível e servidor. Você lidera cuidando de quem executa o trabalho. Suas equipes costumam ter alta retenção de talentos devido ao clima espetacular que você proporciona.\n• Pontos de Atenção: O desejo intenso de agradar a todos e de manter a paz pode torná-lo excessivamente passivo diante de problemas. Pode haver grande dificuldade em dar feedbacks duros ou em dizer um 'não' necessário.\n• Dica de Desenvolvimento: Compreenda que conflitos construtivos são saudáveis e necessários para a evolução do negócio. Pratique a assertividade: posicionar-se com firmeza não anula a sua bondade. Liderar com amor também inclui saber cobrar resultados quando necessário.",
-        
-        IC: "Sua combinação Influência-Conformidade (IC) molda o perfil do 'Comunicador Preciso'. Você possui a habilidade rara de traduzir ideias brilhantes e dados complexos de forma cativante, didática e extremamente estruturada.\n\n💡 VISÃO GERAL:\nVocê é um diplomata nato e um pensador elegante. Consegue unir o brilho e a extroversão do perfil influente com a exatidão e a preocupação com os detalhes do perfil analítico. Isso faz de você um excelente argumentador, capaz de encantar audiências sem nunca perder a lógica ou os fatos. É o profissional perfeito para representar a qualidade de uma marca ou para treinar pessoas.\n\n• Forças e Superpoderes: Comunicação articulada e inteligente, criatividade baseada em fatos, alto nível de profissionalismo e habilidade excepcional para apresentações e negociações técnicas.\n• Estilo de Liderança: Orientador e metódico. Você engaja a equipe explicando o 'porquê' e o 'como' das coisas de forma clara e inspiradora, prezando por entregas que unam estética e altíssima qualidade funcional.\n• Pontos de Atenção: A tensão interna entre querer interagir socialmente (I) e o desejo de isolar-se para aperfeiçoar o trabalho (C) pode gerar exaustão. Há também uma tendência à autocrítica severa quando a performance não atinge seu ideal.\n• Dica de Desenvolvimento: Não deixe que o perfeccionismo silencie sua voz criativa. Entenda que 'feito é melhor que perfeito' em muitas ocasiões. Equilibre sua necessidade de reconhecimento externo com a autoconfiança de que seu trabalho analítico já tem grande valor intrínseco.",
-        
-        SD: "Sua combinação Estabilidade-Dominância (SD) forma um perfil de 'Liderança Prática e Resiliente'. Você é a âncora de segurança em tempos de crise, combinando uma paciência diplomática com firmeza oculta para resolver problemas.\n\n💡 VISÃO GERAL:\nVocê é a força tranquila. Geralmente prefere atuar nos bastidores e garantir que as operações fluam perfeitamente, mas não hesita em assumir o controle total se a situação exigir. Sua lealdade é profunda e sua ética de trabalho é inquestionável. Você entrega resultados de forma consistente, sem precisar de holofotes, construindo respeito através de ações sólidas e contínuas.\n\n• Forças e Superpoderes: Constância impressionante, pragmatismo na resolução de problemas, capacidade de mantener a calma sob pressão extrema e habilidade para sustentar ritmos de trabalho que fariam outros desistirem.\n• Estilo de Liderança: Orientado para processos e proteção da equipe. Você lidera pelo exemplo prático e pela garantia de estabilidade. Quando define um objetivo, nada o desvia do caminho traçado.\n• Pontos de Atenção: Pode ser excessivamente resistente a inovações que alterem drasticamente o status quo. Sua dificuldade inicial em expressar emoções ou frustrações pode resultar em um acúmulo de estresse silencioso.\n• Dica de Desenvolvimento: Pratique a vocalização das suas ideias inovadoras e de seus limites. Não tenha medo de desafiar métodos antigos se perceber que eles já não servem. Saia da zona de conforto com mais frequência, pois sua capacidade de execução pode revolucionar a empresa se você se permitir arriscar.",
-        
-        SI: "Sua combinação Estabilidade-Influência (SI) consolida o perfil do 'Mediador Harmonioso'. Você é especialista em construir pontes, cultivar relacionamentos profundos e manter o clima da equipe sempre leve e produtivo.\n\n💡 VISÃO GERAL:\nVocê é a essência do trabalho em equipe. Tem uma natureza afetuosa, paciente e genuinamente preocupada com o bem-estar alheio. Sua primeira motivação é servir e apoiar. Como você valoriza conexões humanas verdadeiras acima de processos engessados, as pessoas se sentem naturalmente confortáveis ao seu redor, confiando-lhe confidências e buscando o seu sábio aconselhamento.\n\n• Forças e Superpoderes: Altíssima inteligência emocional, lealdade admirável, capacidade de unir pessoas com pensamentos divergentes e uma escuta empática que pouquíssimos líderes possuem.\n• Estilo de Liderança: Facilitador e acolhedor. Você não comanda de cima para baixo, mas lidera caminhando ao lado da equipe. Transforma grupos de trabalho em verdadeiras famílias corporativas.\n• Pontos de Atenção: A aversão quase paralisante ao conflito pode fazer com que você tolere desempenhos ruins ou atitudes tóxicas de terceiros. Tende a colocar as necessidades da empresa ou dos outros sempre à frente das suas.\n• Dica de Desenvolvimento: O seu maior desafio é aprender a dizer 'Não'. Lembre-se de que evitar um conflito hoje é apenas adiá-lo para um amanhã muito pior. Desenvolva o hábito de delegar tarefas e de cobrar resultados; uma liderança compassiva também exige responsabilidade e limites claros.",
-        
-        SC: "Sua combinação Estabilidade-Conformidade (SC) revela o perfil do 'Especialista Meticuloso'. Você é a personificação da confiabilidade, garantindo que tudo funcione com precisão, harmonia e segurança incontestável.\n\n💡 VISÃO GERAL:\nVocê é o guardião dos bastidores. Prefere rotinas bem estabelecidas, onde suas habilidades organizacionais e analíticas possam brilhar sem a pressão de mudanças bruscas. Não age por impulso; toda decisão sua é devidamente pensada, analisada e planejada. Isso faz de você um profissional de extrema confiança, para quem líderes e diretores entregam as tarefas mais complexas e sigilosas da empresa.\n\n• Forças e Superpoderes: Precisão cirúrgica, paciência infinita para processos longos, olhar afiado para detectar riscos, organização sistemática e dedicação absoluta à qualidade da entrega.\n• Estilo de Liderança: Técnico e procedural. Lidera através da criação de métodos seguros, oferecendo todo o suporte técnico para que a equipe não cometa erros. Cria um ambiente de ordem e previsibilidade.\n• Pontos de Atenção: A necessidade excessiva de segurança (S) somada ao perfeccionismo (C) pode travar a sua capacidade de inovação e agilidade. Você pode paralisar diante de situações ambíguas ou que exijam improviso.\n• Dica de Desenvolvimento: Entenda que em um mundo dinâmico, o cenário perfeito raramente existirá. Aprenda a trabalhar com dados incompletos e a tomar decisões ágeis. Celebre o processo de tentativa e erro como uma forma válida de aprendizado, permitindo-se ser um pouco menos rígido consigo mesmo.",
-        
-        CD: "Sua combinação Conformidade-Dominância (CD) compõe o perfil do 'Arquiteto de Soluções'. Você pensa com a profundidade de um cientista e executa com a determinação de um comandante focado no alvo.\n\n💡 VISÃO GERAL:\nVocê é movido pelo desejo de estar correto e de vencer. Possui uma mente brilhante para estruturar projetos intrincados, aliados à força de vontade para tirá-los do papel. Diferente de líderes mais emocionais, você constrói seu respeito com base na inteligência, no planejamento estratégico implacável e na entrega de soluções à prova de falhas.\n\n• Forças e Superpoderes: Raciocínio lógico afiado, visão estratégica de longo prazo, capacidade de identify eficiências onde ninguém mais vê e uma autossuficiência que dispensa supervisão alheia.\n• Estilo de Liderança: Exigente, autoritário no conhecimento e focado em excelência. Você estabelece o padrão-ouro e espera que a equipe suba de nível para acompanhá-lo. É o tipo de líder que transforma processos caóticos em engrenagens de sucesso.\n• Pontos de Atenção: Pode ser percebido como frio, distante ou impaciente com quem tem um ritmo de aprendizado mais lento. A intolerância à incompetência pode gerar um ambiente de tensão constante se não for equilibrada com tato.\n• Dica de Desenvolvimento: O seu intelecto é a sua maior arma, mas a gestão de pessoas requer coração. Dedique tempo para entender as motivações emocionais da sua equipe. Aprenda a dar feedbacks que corrijam o problema sem desmotivar a pessoa. Flexibilidade será o seu maior trunfo para engajar talentos.",
-        
-        CI: "Sua combinação Conformidade-Influência (CI) cria o perfil do 'Analista Persuasivo'. Você baseia suas convicções em dados sólidos, mas sabe como apresentá-los de forma a educar, engajar e fascinar o seu público.\n\n💡 VISÃO GERAL:\nVocê é uma enciclopédia viva com muito charme. Une a paixão pela exatidão e por regras com a capacidade de articular essas regras de modo que todos compreendam e aceitem. É um professor nato, um conselheiro técnico e um excelente estrategista de comunicação, que detesta o achismo e preza pelo 'saber fazer' acompanhado do 'saber explicar'.\n\n• Forças e Superpoderes: Habilidade de simplificar o complexo, alto padrão de qualidade acadêmica, talento excepcional para apresentações profissionais e capacidade de convencer com base na lógica elegante.\n• Estilo de Liderança: Educador e influenciador técnico. Você lidera fornecendo informações, dados e cenários, guiando a equipe para que eles mesmos cheguem à conclusão lógica que você já havia planejado.\n• Pontos de Atenção: A obsessão por estar sempre certo pode soar como arrogância intelectual. O excesso de detalhes e explicações longas pode cansar interlocutores mais práticos e acelerados.\n• Dica de Desenvolvimento: Adapte a sua comunicação ao seu ouvinte. Treine a sua capacidade de dar respostas em tópicos rápidos e diretos. Além disso, aceite que, em algumas discussões de negócios, as emoções humanas terão mais peso do que a lógica mais perfeita. Seja flexível.",
-        
-        CS: "Sua combinação Conformidade-Estabilidade (CS) consolida o perfil do 'Guardião da Excelência'. Você é o pilar de sustentação de processos críticos, combinando um olhar analítico minucioso com uma lealdade paciente.\n\n💡 VISÃO GERAL:\nVocê é a definição de profissionalismo impecável. Não busca os holofotes, mas é a pessoa a quem todos recorrem quando algo não pode dar errado. Sua abordagem é cautelosa, lógica e incrivelmente consistente. Onde há desordem, você traz estrutura; onde há pressa inconsequente, você traz o planejamento prudente que salva o projeto do desastre.\n\n• Forças e Superpoderes: Altíssimo nível de concentração, controle de qualidade excepcional, diplomacia discreta e uma capacidade sobre-humana para realizar tarefas detalhistas com maestria contínua.\n• Estilo de Liderança: Cauteloso, justo e focado na estrutura. Você é um porto seguro para a equipe, liderando pelo domínio técnico e garantindo que todos tenham os recursos e o tempo necessários para trabalhar direito.\n• Pontos de Atenção: O medo do erro (C) alinhado à aversão à mudança (S) pode torná-lo um freio de mão em ambientes de startup ou de rápidas inovações. Você pode demorar demais para decidir, esperando um 'cenário ideal' que nunca chega.\n• Dica de Desenvolvimento: O bom planejamento não deve ser inimigo da execução. Pratique a tomada de decisão com 70% das informações, ao invés de esperar por 100%. Confie mais na sua vasta experiência acumulada do que em verificações repetitivas. Agilidade é uma métrica de excelência nos dias de hoje."
-    };
-    return combos[primary + secondary] || "Combinação única que equilibra forças analíticas, executoras e relacionais em um padrão exclusivo.";
-}
+        "DI": `A combinação Dominância e Influência cria um perfil altamente dinâmico, focado em ação rápida, resultados audaciosos e forte poder de persuasão. Você é naturalmente movido por grandes desafios e possui um talento ímpar para mobilizar pessoas ao seu redor em prol de um objetivo comum.
 
+💡 Fundamentação Comportamental
+Segundo a teoria multidimensional de Marston, este perfil opera com altíssima energia de "Resposta Ativa". A fusão do foco primário em resultados (D) com a orientação interpessoal (I) gera um indivíduo que não apenas enxerga a linha de chegada, mas cria um campo de engajamento que inspira o time a correr junto. Há uma forte ativação voltada para a conquista, competitividade e o reconhecimento externo.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Visionário, Pioneiro e Inspirador. Você lidera pelo exemplo e imprime um ritmo de trabalho acelerado e vibrante.
+• Tomada de Decisão: Rápida, intuitiva e baseada na visão macro do negócio. Possui altíssima tolerância ao risco e prefere ajustar a rota em movimento.
+• Gestão de Equipes: Delega os pormenores operacionais. Sua gestão é pautada na cobrança enérgica de resultados, balanceada com forte motivação verbal.
+
+💡 Conflitos Internos e Desafios
+Seu maior paradoxo reside na impaciência crônica com processos lentos ou rotinas burocráticas. A urgência feroz em agir (D) pode atropelar a necessidade de construir conexões genuínas (I), fazendo com que, sob pressão ou estresse, você possa soar excessivamente autoritário, ou se torne negligente com os riscos ocultos da operação.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Utilize sua energia inesgotável para romper barreiras mercadológicas, iniciar projetos disruptivos e alavancar o moral da equipe.
+• Ponto de Atenção: Cerque-se de profissionais focados em organização e detalhes (Perfis C e S) para garantir a governança e o acabamento dos projetos que você iniciou.`,
+
+        "DS": `A combinação Dominância e Estabilidade cria a figura do "Trator Executivo": um perfil focado em resultados, mas que atua com uma persistência implacável e estruturada. Você é movido por metas claras e possui a resiliência necessária para atravessar longos períodos de esforço contínuo até alcançar o sucesso.
+
+💡 Fundamentação Comportamental
+Esta é uma combinação de contrastes interessantes na Matriz de Marston. Você une a agressividade em buscar o resultado (D) com a paciência metódica e resistência (S). Psicologicamente, isso resulta em um profissional de sangue frio, capaz de atuar em ambientes de alta pressão sem perder o prumo, garantindo entregas consistentes.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Pragmático, Protetor e Focado na Execução. Você cobra performance, mas fornece as ferramentas e o tempo estruturado para que a equipe produza.
+• Tomada de Decisão: Objetiva e fundamentada em fatos práticos. Ousada em relação à meta, mas cautelosa em relação à execução diária.
+• Gestão de Equipes: Conduz o time com mão firme. Oferece segurança psicológica aos liderados, desde que eles demonstrem lealdade e trabalho duro ininterrupto.
+
+💡 Conflitos Internos e Desafios
+O grande embate interno ocorre entre a vontade de mudar e acelerar tudo agora (D) e o desejo de manter a estabilidade e a rotina (S). Isso pode gerar momentos de teimosia extrema, onde você se recusa a abandonar uma estratégia que parou de funcionar apenas pelo apego ao esforço já investido.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Assuma a liderança de projetos complexos de longo prazo que demandam pulso firme, consistência e resistência a crises.
+• Ponto de Atenção: Desenvolva a flexibilidade cognitiva. Aprenda a reconhecer o momento exato em que pivotar e abandonar uma ideia é mais estratégico do que persistir nela.`,
+
+        "DC": `A combinação Dominância e Conformidade forma um dos perfis mais exigentes e analíticos: o Estrategista Cirúrgico. Você é movido por um desejo avassalador de atingir resultados de altíssima excelência, unindo a necessidade de vencer com a obrigação absoluta de estar certo.
+
+💡 Fundamentação Comportamental
+Segundo Marston, este perfil percebe o ambiente como inerentemente desafiador e o enfrenta com lógica fria e embasamento técnico inquestionável. Unindo a orientação para a tarefa de ambos os eixos, sua mente opera como um sistema focado em resolver problemas complexos, extirpando ineficiências e buscando a perfeição operacional.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Exigente, Lógico e Orientado à Qualidade Máxima. Estabelece padrões elevados e não aceita mediocridade.
+• Tomada de Decisão: Baseada puramente em dados, métricas e análises profundas. Corre riscos calculados milimetricamente, nunca agindo por mero impulso.
+• Gestão de Equipes: Liderança pelo intelecto e competência técnica. Foco total em processos e resultados. A cobrança é direta, sem floreios emocionais.
+
+💡 Conflitos Internos e Desafios
+A falta do componente de relacionamento (Baixos I e S) torna o seu foco em empatia quase inexistente no modo automático. A exigência brutal por rapidez (D) somada à precisão milimétrica (C) pode transformar você em um líder microgerenciador, centralizador e extremamente crítico, esmagando a criatividade do time.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Atue no comando de áreas vitais de negócios, reestruturações corporativas, finanças complexas ou onde o erro tem tolerância zero.
+• Ponto de Atenção: Pratique a "Empatia Tática". Lembre-se de que máquinas entregam processos, mas pessoas entregam o resultado. Invista tempo para ouvir sua equipe.`,
+
+        "ID": `A combinação Influência e Dominância gera um perfil brilhante, persuasivo e carismático, com um forte instinto competitivo. Seu foco primário é envolver, motivar e utilizar as conexões humanas para, de forma inteligente, atingir metas e vitórias audaciosas.
+
+💡 Fundamentação Comportamental
+Este é o arquétipo do grande "Vendedor de Ideias". Na teoria comportamental, você apresenta dupla Extroversão e Resposta Ativa. Seu cérebro busca constantemente recompensas sociais e vitórias práticas. Você utiliza o otimismo e a sua extraordinária habilidade verbal (I) como ferramentas de poder e influência para orquestrar as pessoas em direção aos seus objetivos (D).
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Carismático, Direcionador e Promotor. Você energiza a equipe e transforma o trabalho árduo em uma grande campanha empolgante.
+• Tomada de Decisão: Veloz, corajosa e baseada na intuição e na sua capacidade de "ler as pessoas" na sala.
+• Gestão de Equipes: Promove um ambiente competitivo, porém divertido. Recompensa o esforço publicamente e inspira lealdade através do seu magnetismo pessoal.
+
+💡 Conflitos Internos e Desafios
+O desejo de ser popular e amado (I) entra em choque direto com a necessidade de ser o chefe duro que cobra resultados (D). Em situações críticas, você pode postergar conversas difíceis ou demissões necessárias para não abalar sua imagem. O excesso de otimismo também pode levá-lo a subestimar desafios operacionais reais.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Excelente para atuar na linha de frente de expansão de negócios, negociações estratégicas de alto escalão e construção de branding.
+• Ponto de Atenção: Discipline sua execução. Grandes ideias precisam de acabamento. Conte com parceiros organizados para transformar suas promessas de vendas em realidade operacional.`,
+
+        "IS": `A combinação Influência e Estabilidade cria o verdadeiro "Líder Apoiador". Você possui uma inteligência interpessoal raríssima, combinando o dom da comunicação calorosa com uma empatia profunda, o que o torna uma das pessoas mais acessíveis e amadas em qualquer organização.
+
+💡 Fundamentação Comportamental
+A combinação I e S foca 100% no Eixo Relacional (Pessoas). Segundo a Psicologia Positiva, este perfil cria altíssimos níveis de segurança psicológica no ambiente de trabalho. Sua energia é gasta em manter a harmonia, desenvolver talentos de forma gentil e garantir que todos se sintam incluídos, respeitados e ouvidos.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Líder Servidor, Aconselhador e Integrador. Seu sucesso é medido pelo bem-estar e crescimento individual da sua equipe.
+• Tomada de Decisão: Baseada no consenso, na colaboração e em como a decisão afetará o grupo no longo prazo.
+• Gestão de Equipes: Cria times altamente engajados e leais. Resolve conflitos através da mediação paciente, diálogo aberto e escuta ativa excepcional.
+
+💡 Conflitos Internos e Desafios
+O pavor do confronto direto e a necessidade crônica de harmonia são seus maiores freios. Você pode absorver o estresse e os problemas da equipe para si, levando à sobrecarga emocional. Além disso, tem severas dificuldades em cobrar resultados numéricos agressivos, preferindo desculpar o erro a confrontá-lo.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Atuação insuperável em Gestão de Pessoas, Cultura Organizacional, Treinamento e áreas de Sucesso do Cliente (Customer Success).
+• Ponto de Atenção: Desenvolva a assertividade. O "Não" é uma ferramenta fundamental de liderança. O conflito construtivo é necessário para o crescimento do time.`,
+
+        "IC": `A combinação Influência e Conformidade forma o perfil do "Avaliador Diplomático" ou "Vendedor Consultivo". Você é capaz de se comunicar de forma incrivelmente persuasiva, mas o faz utilizando lógica rigorosa, fatos, dados e explicações perfeitamente estruturadas.
+
+💡 Fundamentação Comportamental
+Este é um perfil fascinante de características opostas na Matriz de Marston: a extroversão do (I) mesclada com a análise crítica do (C). Isso significa que você ama estar com pessoas, desde que a conversa seja inteligente, precisa e tenha alto padrão intelectual. Você não vende emoção barata; você vende razão com carisma.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Educador, Assessor e Comunicador Lógico. Lidera explicando minuciosamente o "porquê" de cada regra e processo.
+• Tomada de Decisão: Altamente ponderada. Você precisa falar sobre o problema, expor os dados em voz alta e discutir com especialistas antes de decidir.
+• Gestão de Equipes: Foca em desenvolver o conhecimento técnico do time. É acessível, porém exige que o trabalho seja feito com altíssima qualidade e sem erros de processo.
+
+💡 Conflitos Internos e Desafios
+O seu desejo de receber reconhecimento social (I) entra em rota de colisão com o seu pavor absurdo de cometer erros ou parecer incompetente (C). Isso gera uma forte paralisia por análise: você pode adiar projetos infinitamente tentando deixá-los "perfeitos" antes de mostrá-los ao mundo, por medo do julgamento.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Excelente atuação como porta-voz técnico, consultor sênior, relações institucionais ou líder de times de especialistas.
+• Ponto de Atenção: Aceite que o "feito é melhor que o perfeito". Abandone a armadilha do perfeccionismo para conseguir colocar suas excelentes ideias no mercado com mais rapidez.`,
+
+        "SD": `A combinação Estabilidade e Dominância molda o "Executor Resiliente". Sob uma aparência tranquila, calma e metódica, existe uma força de vontade férrea e uma determinação focada em resultados que dificilmente recua diante de um objetivo estabelecido.
+
+💡 Fundamentação Comportamental
+Neste perfil, a base S fornece um ritmo de trabalho cadenciado, previsível e estruturado, enquanto o D secundário fornece um foco implacável na meta. Diferente dos perfis explosivos, você não faz estardalhaço; você simplesmente abaixa a cabeça e trabalha obstinadamente até demolir o obstáculo, usando o tempo a seu favor.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Líder Prático, Calmo sob Pressão e Direcionado à Tarefa. Inspira confiança extrema por nunca perder o controle emocional em crises.
+• Tomada de Decisão: Lenta inicialmente, para garantir que o plano seja sustentável, mas uma vez tomada a decisão, executa com determinação inabalável.
+• Gestão de Equipes: Cobra consistência e ritmo. Não se impressiona com motivação passageira; valoriza disciplina, lealdade e entregas pontuais.
+
+💡 Conflitos Internos e Desafios
+A internalização de pressões é o seu maior inimigo. Você tende a acumular frustrações em silêncio (S) focado apenas em entregar a tarefa (D), o que pode resultar em explosões repentinas e severas. Além disso, pode se tornar excessivamente rígido e resistente a mudanças de curso propostas por outras pessoas.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Gerenciamento de operações críticas que demandam sangue frio, planejamento estruturado e execução infalível a médio e longo prazo.
+• Ponto de Atenção: Exercite expressar suas contrariedades no dia a dia. Aprenda a delegar verdadeiramente em vez de carregar todo o peso do projeto sozinho.`,
+
+        "SI": `A combinação Estabilidade e Influência resulta no "Mediador Universal". Você é a essência do trabalho em equipe, combinando uma paciência extraordinária, excelente capacidade de escuta e um talento natural para gerar harmonia profunda em qualquer ambiente.
+
+💡 Fundamentação Comportamental
+Seu foco cerebral está completamente direcionado ao eixo humano, priorizando a segurança, a união e as conexões significativas. Na percepção de Marston, você opera em um ambiente passivo e favorável. Isso significa que você atua como a "cola social" da empresa, garantindo que ninguém fique para trás e que o clima permaneça acolhedor.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Facilitador, Liderança Servidora e Participativa. Você constrói times onde as pessoas sentem que pertencem a uma família.
+• Tomada de Decisão: Exclusivamente focada em gerar consenso. Você busca garantir que todas as vozes sejam ouvidas antes de qualquer mudança.
+• Gestão de Equipes: Liderança baseada na confiança mútua e apoio incondicional. Você oferece colo em momentos difíceis e estimula o crescimento gentil.
+
+💡 Conflitos Internos e Desafios
+A aversão a conflitos beira o paralisante. Você sacrifica a si mesmo, e até mesmo as metas da empresa, para não ter que dar um feedback negativo ou magoar um colaborador. A falta total de agressividade comercial e senso de urgência pode fazer com que equipes lideradas por você fiquem estagnadas.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Inestimável em áreas de resolução de conflitos internos, desenvolvimento humano, atendimento especializado e cuidado com o cliente.
+• Ponto de Atenção: Pratique a "Compaixão Corajosa". Entenda que omitir um feedback corretivo de um membro da equipe não é ajudá-lo, é impedir o seu desenvolvimento profissional.`,
+
+        "SC": `A combinação Estabilidade e Conformidade forma o perfil do "Técnico Especialista". Você entrega altos níveis de confiabilidade, estrutura e precisão, preferindo atuar nos bastidores garantindo que os alicerces da organização funcionem perfeitamente.
+
+💡 Fundamentação Comportamental
+Sua base de atuação é a lógica metódica e a previsibilidade. Você opera de forma introvertida, evitando exposições desnecessárias. A paciência (S) unida ao alto rigor analítico (C) faz de você a pessoa ideal para tarefas complexas, profundas e repetitivas que exigiriam muito de perfis mais impacientes, criando um trabalho artesanal e detalhista.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Procedimental, Instrucional e Protetor de Qualidade. Você lidera estabelecendo métodos infalíveis e ensinando-os com profunda paciência.
+• Tomada de Decisão: Extremamente cautelosa. Baseada em precedentes, manuais, normas técnicas e extensiva verificação de dados para garantir risco zero.
+• Gestão de Equipes: Não cobra velocidade, cobra exatidão. O ambiente é calmo, porém rigorosamente focado nas regras estabelecidas e conformidade.
+
+💡 Conflitos Internos e Desafios
+Seu maior desafio é o horror absoluto ao imprevisível, à inovação brusca e à desordem. Quando exposto a ambientes dinâmicos de alta mudança, você entra em estresse severo. Pode se tornar teimoso, apegado a regulamentos antigos, agindo como um "gargalo" ou bloqueador para a inovação da empresa por puro medo do novo.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Fundamental em engenharias complexas, contabilidade, compliance, TI estrutural e gestão de qualidade, onde o erro custa caro.
+• Ponto de Atenção: Compreenda que o perfeccionismo e a extrema cautela podem ser inimigos do progresso. Aceite desenvolver uma margem de "risco planejado" em sua rotina.`,
+
+        "CD": `A combinação Conformidade e Dominância revela o perfil do "Arquiteto de Sistemas". Trata-se de um indivíduo brilhante, lógico e implacável, que exige o mais alto grau de excelência (C) aliado a uma busca contundente por resultados imediatos (D).
+
+💡 Fundamentação Comportamental
+No seu modelo mental, o trabalho deve ser feito não apenas rapidamente, mas perfeitamente. Focado 100% no eixo das Tarefas, a emoção humana é vista como um fator que atrapalha a eficiência da equação. Sua inteligência crítica é afiada e você consegue identificar falhas estruturais em segundos, aplicando correções de forma direta.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Exigente, Estratégico, Controlador e Visionário Técnico. Lidera pela superioridade intelectual e pela implacável lógica de mercado.
+• Tomada de Decisão: Altamente autocrática e embasada em dados frios. Resolve os problemas de forma rápida e definitiva, priorizando a métrica técnica.
+• Gestão de Equipes: Comunicação seca e voltada unicamente ao trabalho. Cobra perfeição técnica combinada com velocidade de entrega, pressionando o time ao limite.
+
+💡 Conflitos Internos e Desafios
+A completa ausência de tato social (baixos I e S) torna você propenso a ser visto como insensível, áspero ou até "robótico". A sua tolerância para com os erros e vulnerabilidades de terceiros é nula. Essa rigidez extrema pode causar alta rotatividade (turnover) na sua equipe por esgotamento e desmotivação crônica.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Design de sistemas organizacionais, liderança de pesquisas de alto nível, diretorias financeiras ou de tecnologia estratégica.
+• Ponto de Atenção: Conscientize-se de que a inteligência emocional é uma *competência técnica* de liderança. Elogie publicamente, valorize as conexões humanas e module o seu tom de voz.`,
+
+        "CI": `A combinação Conformidade e Influência resulta no "Diplomata Lógico". Você possui o dom notável de cruzar os extremos comportamentais: mantém um padrão de altíssima exigência analítica (C) ao mesmo tempo em que sabe se expressar e interagir de forma elegante, cativante e articulada (I).
+
+💡 Fundamentação Comportamental
+Seu cérebro necessita estar tecnicamente embasado para se sentir seguro, mas simultaneamente precisa da validação e do engajamento do grupo. Isso cria um profissional capaz de decodificar dados complexos, métricas e regulações, e comunicá-los de forma que qualquer audiência se sinta inspirada e compreenda a mensagem.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Consultivo, Educador e Criterioso. Lidera pela persuasão técnica, convencendo a equipe por meio de argumentos irrefutáveis entregues com polidez.
+• Tomada de Decisão: Racional, porém socialmente consciente. Você avalia profundamente os dados, mas também mede como a decisão impactará a moral da equipe.
+• Gestão de Equipes: Promove um ambiente acadêmico e de diálogo. Exige qualidade absoluta nos processos, mas corrige e ensina de forma polida e paciente.
+
+💡 Conflitos Internos e Desafios
+O perfeccionismo analítico (C) colide diretamente com a vontade de agradar (I). Em situações críticas que exigem decisões duras (como demissões ou cortes dolorosos), você pode sofrer intensamente, paralisando em análises intermináveis para tentar encontrar uma saída "mágica" que não desagrade ninguém.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Brilhante em funções de consultoria de alto nível, assessoria executiva, docência superior, relações públicas e auditoria humanizada.
+• Ponto de Atenção: Reconheça que nem todas as decisões podem ser populares ou baseadas em dados perfeitos. Desenvolva o músculo da decisão sob incerteza e enfrente conflitos.`,
+
+        "CS": `A combinação Conformidade e Estabilidade revela o "Perfeccionista Protetor". Você é a essência da meticulosidade corporativa, movido por uma busca sistemática pela precisão, qualidade garantida, ambientes altamente estruturados e risco zero.
+
+💡 Fundamentação Comportamental
+O seu foco primário concentra-se em introversão profunda, análise (C) e ritmo conservador (S). Profissionais com este perfil desenham procedimentos tão completos e cuidadosos que blindam a organização contra vulnerabilidades legais, financeiras ou operacionais. Você opera melhor no sossego dos bastidores, imerso em dados e métodos.
+
+💡 Dinâmica de Liderança
+• Estilo Principal: Especialista Metódico e Guardião de Regras. Lidera definindo políticas rigorosas e garantindo que o compliance seja mantido a qualquer custo.
+• Tomada de Decisão: Extremamente analítica, burocrática e baseada estritamente no manual. Se não estiver documentado e comprovado, não é feito.
+• Gestão de Equipes: Distante das dinâmicas sociais da liderança carismática. Cobra pontualidade, disciplina processual, cautela e aderência inegociável aos padrões estabelecidos.
+
+💡 Conflitos Internos e Desafios
+Seu apego às regras e sua profunda cautela limitam severamente a agilidade da operação. Sob pressão de um mercado volátil, sua postura defensiva e paralisia por excesso de escrutínio tornam-no engessado. Há um desconforto gigante em lidar com personalidades efusivas e caóticas.
+
+💡 Estratégia de Alta Performance
+• Ponto de Alavancagem: Fundamental em backoffice estratégico, auditoria tributária legal, segurança da informação, e laboratórios de precisão científica.
+• Ponto de Atenção: O mercado atual pune a lentidão. Aprenda a aplicar a "Análise Ágil" e a diferenciar quais decisões exigem rigor máximo e quais podem ser tomadas com 80% da informação.`
+    };
+    
+    // Concatena primário e secundário (ex: "D" e "I" -> "DI")
+    const key = primary + secondary;
+    
+    // Retorna a análise profunda ou um texto de segurança caso a chave dê erro
+    return combos[key] || "A combinação dos seus perfis revela uma forte adaptabilidade e uma forma única de interpretar o ambiente ao seu redor e tomar decisões.";
+}    
 // 
 // === GERADOR DE PDF PROFISSIONAL ===
 // 
@@ -362,8 +546,7 @@ async function renderChart(pct) {
             Chart.register(ChartDataLabels);
             if (resultChart) { try { resultChart.destroy(); } catch (e) {} }
 
-            // GARANTE ALTA RESOLUÇÃO PARA O PDF (NO PC E NO CELULAR)
-            Chart.defaults.devicePixelRatio = 3;
+            Chart.defaults.devicePixelRatio = 2; // Força qualidade alta
 
             resultChart = new Chart(ctx, {
                 type: 'bar',
@@ -384,14 +567,14 @@ async function renderChart(pct) {
                         datalabels: { anchor: 'end', align: 'right', formatter: (v) => `${v}%`, color: '#1e40af', font: { weight: 'bold', size: 15 }, offset: 10 }
                     },
                     layout: { padding: { top: 10, right: 40, bottom: 10, left: 10 } },
-                    animation: false // Desativa animação para captura perfeita instantânea
+                    animation: false // Essencial para captura do PDF
                 }
             });
             resolve();
-        }, 300); // Mais tempo para o celular desenhar com calma antes do print
+        }, 300);
     });
 }
-
+    
 async function generatePdfDocAndFileName() {
     const data = window.userData;
     if (!data) throw new Error("Sem dados para gerar PDF (userData vazio).");
@@ -495,17 +678,38 @@ async function generatePdfDocAndFileName() {
     if (chartCanvas) {
         const imgData = chartCanvas.toDataURL("image/png", 1.0);
         
-        // CORREÇÃO DA PROPORÇÃO DO GRÁFICO PARA SMARTPHONES
-        // Ao invés de forçar altura "85", o código lê a proporção real gerada na tela
+        // --- INÍCIO DA CORREÇÃO PARA SMARTPHONES ---
+        // Lógica de cálculo proporcional para garantir tamanho e qualidade ideais no PDF
+        const maxPdfWidth = 170; // Largura máxima desejada no PDF (A4 = 210, margem de 20 de cada lado)
+        const maxPdfHeight = 85; // Altura máxima desejada para não "espremer" o texto abaixo
+
+        // Pega as dimensões reais do canvas renderizado na tela (pode variar entre PC e celular)
         const canvasWidth = chartCanvas.width;
         const canvasHeight = chartCanvas.height;
-        const ratio = canvasHeight / canvasWidth;
         
-        const pdfWidth = 170; // Largura no PDF
-        const pdfHeight = pdfWidth * ratio; // Altura no PDF matematicamente proporcional
+        // Calcula a proporção real da imagem
+        const imgRatio = canvasHeight / canvasWidth;
+        
+        let pdfWidth = maxPdfWidth;
+        let pdfHeight = pdfWidth * imgRatio;
 
-        doc.addImage(imgData, "PNG", 20, yPdf, pdfWidth, pdfHeight); 
-        yPdf += pdfHeight + 10;
+        // Se a altura proporcional ficar maior que a nossa altura máxima, 
+        // ajustamos a imagem pela altura e recalculamos a largura para manter a proporção
+        if (pdfHeight > maxPdfHeight) {
+            pdfHeight = maxPdfHeight;
+            pdfWidth = pdfHeight / imgRatio;
+        }
+
+        // Centraliza a imagem horizontalmente na página A4 (210mm)
+        const xOffset = (210 - pdfWidth) / 2;
+
+        doc.addImage(imgData, "PNG", xOffset, yPdf, pdfWidth, pdfHeight); 
+        
+        // Independentemente do tamanho gerado (se for celular será menor em altura do que no PC),
+        // fixamos o início do próximo texto logo abaixo do espaço máximo reservado para o gráfico
+        // Assim, o texto "Importância da Análise DISC..." começa sempre no mesmo lugar.
+        yPdf += maxPdfHeight + 10; 
+        // --- FIM DA CORREÇÃO ---
     }
 
     doc.setFontSize(14); doc.setFont("helvetica", "bold"); doc.setTextColor(14, 165, 233);
@@ -546,7 +750,6 @@ async function generatePdfDocAndFileName() {
         addFooterSignature();
     };
 
-    // NOVO: Lógica de geração de PDF para empate de 25%
     if (data.isBalanced) {
         doc.addPage(); doc.setFillColor(248, 250, 252); doc.rect(0, 0, 210, 297, "F");
         doc.setFillColor(107, 33, 168); doc.rect(0, 0, 210, 25, "F");
@@ -566,7 +769,6 @@ async function generatePdfDocAndFileName() {
         
         addFooterSignature();
 
-        // Resumo dos 4 perfis em uma página para o usuário Camaleão
         doc.addPage(); doc.setFillColor(248, 250, 252); doc.rect(0, 0, 210, 297, "F");
         doc.setFillColor(31, 41, 55); doc.rect(0, 0, 210, 25, "F");
         doc.setFontSize(18); doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255);
@@ -589,7 +791,6 @@ async function generatePdfDocAndFileName() {
         });
         addFooterSignature();
     } else {
-        // Fluxo Normal (Se não for 25% exato)
         renderProfilePage(data.primary, true);
         renderProfilePage(data.secondary, false);
 
@@ -634,7 +835,6 @@ async function generatePdfDocAndFileName() {
 
     return { doc, pdfFileName: `💡DISC: ${sanitize(data.name).replace(/\s+/g, "_")}.pdf` };
 }
-
 // 
 // === FLUXO ===
 // 
@@ -710,7 +910,6 @@ async function showResult() {
         pct[maxKey] = parseFloat((pct[maxKey] + (100 - total)).toFixed(1));
     }
 
-    // LÓGICA DO EMPATE EXATO 25% - Sem alterar cálculos
     const isBalanced = (pct.D === 25 && pct.I === 25 && pct.S === 25 && pct.C === 25);
 
     document.getElementById('test-section').classList.add('hidden');
@@ -728,7 +927,6 @@ async function showResult() {
         <span class="font-bold">Profissão:</span> ${sanitize(document.getElementById('occupation').value.trim())}
     `;
 
-    // INSERÇÃO DA EXIBIÇÃO CONDICIONAL NO HTML DA TELA
     if (isBalanced) {
         document.getElementById('dominant-section').innerHTML = `
             <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-5 rounded-lg border-l-4 border-gray-500 relative overflow-hidden">
